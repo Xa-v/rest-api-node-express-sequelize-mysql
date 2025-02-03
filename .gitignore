@@ -1,0 +1,15 @@
+node_modules
+jspm_packages
+typings
+.npm
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.nyc_output
+build/Release
+.node_repl_history
