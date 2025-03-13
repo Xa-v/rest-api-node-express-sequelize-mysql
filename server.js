@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(cors());
 
 app.use('/users', require('./users/users.controller'));
+app.use('/login', require('./user-authentication/auth.controller'));
 
 app.use(errorHandler);
 
