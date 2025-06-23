@@ -8,8 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(cors());
 
-app.use('/users', require('./users/users.controller'));
-app.use('/login', require('./user-authentication/auth.controller'));
+// app.use('/users', require('./users/users.controller'));
+// app.use('/login', require('./user-authentication/auth.controller'));
+app.use('/quote', require('./quotation/quotation.controller'));
 
 app.use(errorHandler);
 
