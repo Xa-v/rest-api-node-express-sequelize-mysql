@@ -19,7 +19,7 @@ app.get('/ping', (req, res) => {
 
 setInterval(async () => {
   try {
-    await axios.get(`http://localhost:${port}/ping`);
+    await axios.get(`https://kmdc-sample-api.onrender.com/ping`);
     console.log('Self-ping successful');
   } catch (error) {
     console.error('Error with self-ping', error);
