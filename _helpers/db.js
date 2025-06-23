@@ -1,5 +1,4 @@
 require('dotenv').config();
-const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
 
 module.exports = db = {};
@@ -7,11 +6,13 @@ module.exports = db = {};
 initialize();
 
 async function initialize() {
-    const { host, port, user, password, database } = process.env;
-    const connection = await mysql.createConnection({ host: host, port: port, user: user, password: password });
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
-
-    const sequelize = new Sequelize(database, user, password, {dialect: 'mysql', host: host, port: port, define: {id: false,}}); 
+   const sequelize = new Sequelize({
+        dialect: 'sqlite',
+        storage: process.env.SQLITE_STORAGE || './data/database.sqlite', // default file path
+        define: {
+            id: false, // retain your original define settings
+        }
+    });
 
     db.User = require('../users/user.model')(sequelize);
 

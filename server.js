@@ -14,4 +14,4 @@ app.use('/login', require('./user-authentication/auth.controller'));
 app.use(errorHandler);
 
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
-app.listen(port, () => console.log('\n\n\n https://github.com/Xa-v'));
+app.listen(port, () => console.log('\n\n\n localhost: 4000'));
