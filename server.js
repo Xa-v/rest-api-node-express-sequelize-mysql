@@ -10,7 +10,14 @@ const errorHandler = require('_middleware/error-handler');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
-app.use(cors());
+
+const corsOptions = {
+  origin: ['https://kmdc-sample-api.onrender.com', 'https://main.d197akpax3jxmy.amplifyapp.com', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+};
+
+app.use(cors(corsOptions));
+
 
 app.get('/ping', (req, res) => {
   console.log('Ping received');
