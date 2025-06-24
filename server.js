@@ -31,7 +31,7 @@ setInterval(async () => {
   } catch (error) {
     console.error('Error with self-ping', error);
   }
-}, 5000);  // 10 minutes in milliseconds
+}, 14 * 60 * 1000);  // 14 minutes in milliseconds
 
 app.use('/quote', require('./quotation/quotation.controller'));
 
