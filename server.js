@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true}));
 
 const corsOptions = {
   origin: ['https://kmdc-sample-api.onrender.com', 'https://main.d197akpax3jxmy.amplifyapp.com', 'http://localhost:3000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
 };
 
 app.use(cors(corsOptions));
