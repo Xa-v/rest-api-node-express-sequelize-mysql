@@ -19,19 +19,19 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-// app.get('/ping', (req, res) => {
-//   console.log('Ping received');
-//   res.status(200).send(); 
-// });
+app.get('/ping', (req, res) => {
 
-// setInterval(async () => {
-//   try {
-//     await axios.get(`https://kmdc-sample-api.onrender.com/ping`);
-//     console.log('Self-ping successful');
-//   } catch (error) {
-//     console.error('Error with self-ping', error);
-//   }
-// }, 840000);  
+  res.status(200).send(); 
+});
+
+setInterval(async () => {
+  try {
+    await axios.get(`https://kmdc-sample-api.onrender.com/ping`);
+    console.log('Self-ping successful');
+  } catch (error) {
+    console.error('Error with self-ping', error);
+  }
+}, 840000);  
 
 app.use('/quote', require('./quotation/quotation.controller'));
 
